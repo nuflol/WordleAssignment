@@ -48,7 +48,7 @@ int main()
     {
         cout << FOREGROUND(ForegroundColor::BrightRed, "Error: Unable to open file!");
     }
-    bool notQuit = true;
+    bool notQuit = true; // feedback - "inverted" bools are less obvious and usually its preferred to pick non-negated names, similar to what you did with bool playing
     while (notQuit)
     {
 
@@ -78,7 +78,7 @@ int main()
             }
 
             // Check if word is valid
-            if (find(wordList.begin(), wordList.end(), input) != wordList.end())
+            if (find(wordList.begin(), wordList.end(), input) != wordList.end()) // feedback - plus points for using std find here!
             {
 
 
@@ -101,7 +101,8 @@ int main()
 
                 }
                 cout << endl;
-                for (int i = 0; i < input.length(); i++)
+                for (int i = 0; i < input.length(); i++) // feedback - you could combine this loop with the one above it, 
+                    // so both background logic and state of the game are handled in one place
                 {
                     if (input[i] == target[i])
                     {
@@ -145,3 +146,6 @@ int main()
         }
     }
 }
+
+// general feedback - nice job! Good quality code which is easy to follow. I'd think about ways of combining the nested loops as possible improvement
+// one way to do this is could be spliting the logic inside nested loops to funcitons.
